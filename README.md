@@ -181,7 +181,7 @@ status string No Status: pending, in_progress, completed, cancelled
 dueDate string Yes Due date in ISO 8601 format
 ```
 Response (201 Created):
-``
+```
 {
 "success": true,
 "message": "Task created successfully",
@@ -197,7 +197,7 @@ Response (201 Created):
    "deletedAt": null
    }
 }
-``
+```
 Error Response (409 Conflict):
 ```
 {
