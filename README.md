@@ -50,15 +50,15 @@ cd dts-developer-challenge
 ```
 
 ### 2. Setup Backend
-
+``
 cd backend
 npm install
 cp .env.example .env
-
+``
 # Edit .env with your database credentials
-
+``
 nodemon
-
+``
 ### 3. Setup Frontend
 ``
 cd frontend
@@ -68,34 +68,35 @@ npm run dev
 ``
 ### 4. Open Application
 
+``
 Visit http://localhost:5173 in your browser.
-
+``
 ### 4🧪 Testing
 
 ## Backend Tests
-
+``
 cd backend
 npm test
-
+``
 ### 🛠 Tech Stack
 
 ## Backend
-
+```
 Node.js
 TypeScript
 Express.js
 PostgreSQL
 Zod (validation)
 Vitest (testing)
-
+```
 ## Frontend
-
+```
 Vue.js 3
 TypeScript
 Vite
 XState / Vue Composables
 Zod (validation)
-
+```
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
@@ -110,52 +111,60 @@ Email: sowemimott@gmail.com
 ## 🚀 Installation
 
 1. Clone the repository
-   git clone https://github.com/tsowems/dts-developer-challenge.git
+``
+    git clone https://github.com/tsowems/dts-developer-challenge.git
    cd dts-developer-challenge/backend
-
-2. Install dependencies
+``
+3. Install dependencies
+ ``
    npm install
-
-3. Set up environment variables
+``
+4. Set up environment variables
+ ``
    cp .env.example .env
    Edit .env with your configuration (see Environment Variables).
-4. Set up the database
+   ``
+6. Set up the database
    See Database Setup.
-5. Start the development server
+7. Start the development server
+``
    nodemon
    The API will be available at http://localhost:8080
-
+``
 ## 🔐 Environment Variables
 
 Create a .env file in the backend root directory:
 
 # Server Configuration
-
+``
 PORT=3001
 NODE_ENV=development
-
+``
 # Database Configuration
-
+``
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=hmcts_tasks
 DB_USER=your_username
 DB_PASSWORD=your_password
 Note: You can register a free postgres on neon - https://neon.com/
-
+``
 📚 API Documentation
+
 Base URL
 http://localhost:6000/api/v1
 
 Endpoints Summary
 Method Endpoint Description
+``
 POST /tasks Create a new task
 GET /tasks Get all tasks
 GET /tasks/:taskId Get task by ID
 PATCH /tasks/:taskId/status Update task status
 DELETE /tasks/:taskId Delete task (soft delete)
-
+``
 Create Task
+```
 POST /tasks
 {
 "title": "Complete project documentation",
@@ -163,37 +172,39 @@ POST /tasks
 "status": "pending",
 "dueDate": "2024-12-31T23:59:59.000Z"
 }
-
+```
+```
 Field Type Required Description
 title string Yes Task title (1-255 characters)
 description string No Task description
 status string No Status: pending, in_progress, completed, cancelled
 dueDate string Yes Due date in ISO 8601 format
-
+```
 Response (201 Created):
-
+``
 {
 "success": true,
 "message": "Task created successfully",
-"data": {
-"id": 1,
-"taskId": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
-"title": "Complete project documentation",
-"description": "Write comprehensive API documentation",
-"status": "pending",
-"dueDate": "2024-12-31T23:59:59.000Z",
-"createdAt": "2024-01-15T10:30:00.000Z",
-"updatedAt": "2024-01-15T10:30:00.000Z",
-"deletedAt": null
+   "data": {
+   "id": 1,
+   "taskId": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+   "title": "Complete project documentation",
+   "description": "Write comprehensive API documentation",
+   "status": "pending",
+   "dueDate": "2024-12-31T23:59:59.000Z",
+   "createdAt": "2024-01-15T10:30:00.000Z",
+   "updatedAt": "2024-01-15T10:30:00.000Z",
+   "deletedAt": null
+   }
 }
-}
-
+``
 Error Response (409 Conflict):
+```
 {
-"success": false,
-"error": "Task with title \"Complete project documentation\" already exists"
+   "success": false,
+   "error": "Task with title \"Complete project documentation\" already exists"
 }
-
+```
 ---
 
 ## Frontend README (frontend/README.md)
