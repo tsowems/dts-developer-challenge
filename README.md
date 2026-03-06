@@ -257,7 +257,7 @@ Before you begin, ensure you have the following installed:
 
 - **Node.js** (v18 or higher) - [Download](https://nodejs.org/)
 - **npm** (v9 or higher) - Comes with Node.js
-- **Backend API** running on `http://localhost:3001`
+- **Backend API** running on `http://localhost:8080`
 
 ### Verify Installation
 
