@@ -13,14 +13,14 @@ This application allows task management to:
 - Delete tasks when no longer needed
 
 ## 🏗 Architecture
-
+```
 ┌─────────────────┐ ┌─────────────────┐
 │ │ │ │ │ │
 │ Vue.js │────▶│ Express.js │────▶│ PostgreSQL │
 │ Frontend │ │ Backend API │ │ Database │
 │ │ │ │ │ │
 └─────────────────┘ └─────────────────┘ └─────────────────┘
-
+```
 ## 📁 Project Structure
 
 dts-developer-challenge/
