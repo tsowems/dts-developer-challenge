@@ -22,7 +22,7 @@ This application allows task management to:
 └─────────────────┘ └─────────────────┘ └─────────────────┘
 ```
 ## 📁 Project Structure
-
+```
 dts-developer-challenge/
 ├── backend/ # Express.js API
 │ ├── src/
@@ -33,7 +33,7 @@ dts-developer-challenge/
 │ ├── package.json
 │ └── README.md
 └── README.md # This file
-
+```
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -60,12 +60,12 @@ cp .env.example .env
 nodemon
 
 ### 3. Setup Frontend
-
+``
 cd frontend
 npm install
 cp .env.example .env
 npm run dev
-
+``
 ### 4. Open Application
 
 Visit http://localhost:5173 in your browser.
