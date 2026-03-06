@@ -1,0 +1,42 @@
+name: Run Tests Before Merge
+
+# Run the workflow on push events to any branch except `main`
+on:
+  push:
+    branches:
+      - '**'
+      - '!main'   # Exclude the main branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js version (adjust version as needed)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run tests
+      - name: Run tests
+        run: npm test
+
+      # Step 5: Upload test results (optional)
+      - name: Upload test results
+        if: always() # Ensure results are uploaded even if tests fail
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: ./test-results # Modify path according to your test results output
+
+  # Define a separate job to run on `main` if you want to run additional tests
+  # after merging to main
